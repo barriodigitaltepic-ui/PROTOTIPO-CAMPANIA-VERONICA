@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Campania | Terrenos Terra Vida</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+html{scroll-behavior:smooth;}
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:'Montserrat',sans-serif;
+  background:#f2f6f0;
+  color:#173b25;
+  font-size:18px;
+  line-height:1.7;
+}
+
+.hero{
+  min-height:100vh;
+  background:url('images/campania-hero.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  color:white;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom, rgba(0,45,20,.35), rgba(0,25,10,.88));
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:1100px;
+  padding:30px;
+}
+
+.logo{
+  width:200px;
+  margin-bottom:25px;
+}
+
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:76px;
+  color:#fff;
+  margin:10px 0;
+}
+
+h2{
+  font-family:'Playfair Display',serif;
+  font-size:42px;
+  color:#0f4d2a;
+  text-align:center;
+  margin-bottom:20px;
+}
+
+h3{
+  color:#0f4d2a;
+  font-size:26px;
+}
+
+.sub{
+  font-size:22px;
+  letter-spacing:2px;
+  color:#d7f5df;
+}
+
+.section{
+  padding:90px 8%;
+  max-width:1400px;
+  margin:auto;
+}
+
+.section-verde{
+  background:
+  linear-gradient(rgba(242,246,240,.96),rgba(242,246,240,.96)),
+  url('images/hoja-pattern.png');
+  background-size:cover;
+  background-position:center;
+}
+
+.card{
+  background:#fff;
+  color:#173b25;
+  border-radius:22px;
+  padding:40px;
+  box-shadow:0 18px 45px rgba(0,0,0,.12);
+  border:1px solid rgba(15,77,42,.15);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+  margin-top:35px;
+}
+
+.price-box{
+  margin:30px auto;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.price{
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.45);
+  padding:18px 30px;
+  border-radius:40px;
+  font-size:22px;
+  font-weight:700;
+  color:#fff;
+}
+
+.btn{
+  display:inline-block;
+  margin:10px;
+  padding:16px 34px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:700;
+  background:#0f4d2a;
+  color:#fff;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+  background:#176b3a;
+}
+
+.secondary{
+  background:transparent;
+  border:1px solid #fff;
+}
+
+.lista{
+  padding-left:22px;
+}
+
+.model{
+  text-align:center;
+}
+
+.model h3{
+  margin-top:0;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:22px;
+}
+
+.gallery img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  border-radius:18px;
+  box-shadow:0 15px 35px rgba(0,0,0,.18);
+  cursor:pointer;
+}
+
+.full-img{
+  width:65%;
+  max-width:850px;
+  height:auto;
+  display:block;
+  margin:auto;
+  border-radius:18px;
+  box-shadow:0 15px 35px rgba(0,0,0,.18);
+  cursor:pointer;
+}
+
+.full-img-wide{
+  width:100%;
+  max-width:1200px;
+  height:auto;
+  display:block;
+  margin:auto;
+  border-radius:18px;
+  box-shadow:0 15px 35px rgba(0,0,0,.18);
+  cursor:pointer;
+}
+
+.modal-img{
+  display:none;
+  position:fixed;
+  z-index:9999;
+  inset:0;
+  background:rgba(0,0,0,.92);
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.modal-img img{
+  max-width:92%;
+  max-height:90%;
+  border-radius:15px;
+}
+
+.cerrar{
+  position:absolute;
+  top:20px;
+  right:40px;
+  font-size:50px;
+  color:white;
+  cursor:pointer;
+}
+
+footer{
+  background:#0f2f1e;
+  color:#d8e8dc;
+  text-align:center;
+  padding:55px 20px;
+}
+
+@media(max-width:768px){
+  h1{font-size:46px;}
+  h2{font-size:30px;}
+  .section{padding:70px 6%;}
+  .full-img{width:100%;}
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+<div class="overlay"></div>
+<div class="hero-content">
+
+<img src="images/logo.png" class="logo">
+
+<h1>CAMPANIA</h1>
+<p class="sub">Terrenos Residenciales | Terra Vida</p>
+
+<p>
+95 lotes con servicios, amenidades exclusivas y financiamiento para construir el patrimonio que imaginas.
+</p>
+
+<div class="price-box">
+  <div class="price">Desde 90 m²</div>
+  <div class="price">95 Lotes</div>
+  <div class="price">Hasta 42 Meses</div>
+</div>
+
+<a class="btn secondary" href="https://barriodigitaltepic-ui.github.io/TIERRA-VIVA-RODRIGO/">
+Volver a Terra Vida
+</a>
+
+</div>
+</section>
+
+<section class="section section-verde">
+<h2>Terrenos Residenciales Campania</h2>
+
+<div class="card" style="text-align:center;">
+<p>
+<strong>Coto Campania</strong> es un desarrollo residencial dentro de <strong>Terra Vida</strong>, diseñado para quienes desean construir su hogar en una comunidad planeada o invertir en una zona con alta proyección de crecimiento y plusvalía.
+</p>
+</div>
+</section>
+
+<section class="section">
+<h2>Características Principales</h2>
+
+<div class="grid">
+<div class="card model">
+<h3>95 Lotes</h3>
+<p>Desarrollo residencial con urbanización, servicios y amenidades.</p>
+</div>
+
+<div class="card model">
+<h3>Desde 90 m²</h3>
+<p>Lotes ideales para construir vivienda o invertir a futuro.</p>
+</div>
+
+<div class="card model">
+<h3>Financiamiento</h3>
+<p>Planes disponibles hasta 42 meses.</p>
+</div>
+
+<div class="card model">
+<h3>Alta Plusvalía</h3>
+<p>Zona de crecimiento y desarrollo continuo en Tepic.</p>
+</div>
+</div>
+</section>
+
+<section class="section">
+<h2>Master Plan Coto Campania</h2>
+
+<div class="card">
+<img src="images/campania-masterplan.jpg" class="full-img-wide" onclick="abrirImagen(this.src)">
+</div>
+</section>
+
+<section class="section section-verde">
+<h2>Disponibilidad de Lotes</h2>
+
+<div class="card" style="text-align:center;">
+<p>
+Consulta la disponibilidad actual, lotes vendidos y lotes apartados dentro de Coto Campania.
+</p>
+
+<img src="images/campania-disponibilidad.jpg" class="full-img-wide" onclick="abrirImagen(this.src)">
+</div>
+</section>
+
+<section class="section">
+<h2>Amenidades de Coto Campania</h2>
+
+<div class="grid">
+<div class="card model"><h3>Casa Club</h3></div>
+<div class="card model"><h3>Seguridad 24/7</h3></div>
+<div class="card model"><h3>Área Infantil</h3></div>
+<div class="card model"><h3>Multicancha</h3></div>
+<div class="card model"><h3>Área de Asadores</h3></div>
+<div class="card model"><h3>Áreas Verdes</h3></div>
+<div class="card model"><h3>Acceso Controlado</h3></div>
+</div>
+</section>
+
+<section class="section section-verde">
+<h2>Servicios Incluidos</h2>
+
+<div class="grid">
+<div class="card model"><h3>Agua Potable</h3></div>
+<div class="card model"><h3>Energía Eléctrica</h3></div>
+<div class="card model"><h3>Sistema de Drenaje</h3></div>
+<div class="card model"><h3>Alumbrado</h3></div>
+<div class="card model"><h3>Urbanización</h3></div>
+<div class="card model"><h3>Servicios Ocultos</h3></div>
+</div>
+</section>
+
+<section class="section">
+<h2>Financiamiento Disponible</h2>
+
+<div class="card" style="text-align:center;">
+<p>
+Adquiere tu terreno con planes de financiamiento de hasta <strong>42 meses</strong> y comienza a construir tu patrimonio en una de las zonas con mayor crecimiento de Tepic.
+</p>
+
+<div class="price-box">
+  <div class="price" style="background:#0f4d2a;">Hasta 42 meses</div>
+  <div class="price" style="background:#0f4d2a;">Lotes desde 90 m²</div>
+</div>
+</div>
+</section>
+
+<section class="section section-verde">
+<h2>Reglamentos y Documentos</h2>
+
+<div class="card" style="text-align:center;">
+<p>
+Consulta la información importante del desarrollo antes de elegir tu lote.
+</p>
+
+<a class="btn" href="REGLAMENTO-CONSTRUCCION.pdf" target="_blank">
+Reglamento de Construcción
+</a>
+
+<a class="btn" href="DISPONIBILIDAD.pdf" target="_blank">
+Disponibilidad de Lotes
+</a>
+</div>
+</section>
+
+<section class="section">
+<h2>Galería</h2>
+
+<div class="gallery">
+<img src="images/campania-1.jpg" onclick="abrirImagen(this.src)">
+<img src="images/campania-2.jpg" onclick="abrirImagen(this.src)">
+<img src="images/campania-3.jpg" onclick="abrirImagen(this.src)">
+<img src="images/campania-4.jpg" onclick="abrirImagen(this.src)">
+<img src="images/campania-5.jpg" onclick="abrirImagen(this.src)">
+<img src="images/campania-6.jpg" onclick="abrirImagen(this.src)">
+</div>
+</section>
+
+<section class="section">
+<div class="card" style="text-align:center;">
+<h2>Invierte en Campania</h2>
+
+<p>
+Campania representa una excelente oportunidad para construir el hogar que imaginas o invertir en una zona con gran potencial de crecimiento. Un desarrollo planeado, con amenidades, servicios y financiamiento que facilitan convertir tu patrimonio en una realidad.
+</p>
+
+<a class="btn" href="https://barriodigitaltepic-ui.github.io/TIERRA-VIVA-RODRIGO/">
+Volver a Terra Vida
+</a>
+</div>
+</section>
+
+<footer>
+<strong>Torrez & Maldonado Real Estate Solutions</strong><br>
+Especialistas en inversión y bienes raíces<br>
+Puerto Vallarta • Riviera Nayarit • Tepic Nayarit
+</footer>
+
+<div id="modalImg" class="modal-img" onclick="cerrarImagen()">
+<span class="cerrar">&times;</span>
+<img id="imgGrande">
+</div>
+
+<script>
+function abrirImagen(src){
+  document.getElementById("modalImg").style.display="flex";
+  document.getElementById("imgGrande").src=src;
+}
+
+function cerrarImagen(){
+  document.getElementById("modalImg").style.display="none";
+}
+</script>
+
+</body>
+</html>
